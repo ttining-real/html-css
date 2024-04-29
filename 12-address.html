@@ -1,1 +1,38 @@
-<!-- HTML 코드를 작성해 주세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>address 관련 요소</title>
+</head>
+
+<body>
+  <!-- <address>
+    <span>(주)멋쟁이사자처럼</span>
+    <span>대표이사 이두희</span>
+    <span>서울특별시 종로구 종로3길 17 D타워, 16-17층</span>
+    <span>사업자 등록번호 : 264-88-01106</span>
+    <span>통신판매업 신고 : 2019 - 서울강남 - 00774</span>
+    <span>연락처 : <a href="tel:+821012345678">010-0000-0000</a></span>
+    <span>문의 <a href="mailto:contact@likelion.net">contact@likelion.net</a></span>
+  </address> -->
+  <!-- footer 영역에 쓰는 태그 -->
+  <address>
+    <span>멋쟁이 사자처럼</span>
+    <!-- aria-hidden="true" : 스크린리더가 읽지 못하게 함. -->
+    <span aria-hidden="true">|</span>
+    <span>대표이사 나성영</span>
+    <span>서울시 종로구 종로3길 17 D타워, 16-17층</span>
+    <span>문의처<a href="mailto:contact@likelion.net">contact@likelion.net</a></span>
+    <!-- ?subject=텍스트 : '텍스트'라는 제목까지 입력이 됨. -->
+    <span>문의처<a href="mailto:contact@likelion.net?subject=문의사항">contact@likelion.net</a></span>
+    <!-- UX 박탈...? -->
+    <span>문의처 contact@likelion.net</span>
+  </address>
+  <small>
+    Copyright &copy; 2022 멋쟁이사자처럼 All rights reserved.
+  </small>
+</body>
+
+</html>

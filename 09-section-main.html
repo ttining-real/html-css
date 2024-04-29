@@ -1,1 +1,41 @@
-<!-- HTML 코드를 작성해 주세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>메인, 섹션 관련 요소</title>
+</head>
+<body>
+  <header>헤더</header>
+  <nav>내비게이션</nav>
+  <main>
+    <section>
+      <header>
+        <h2>섹션 제목</h2>
+      </header>
+      섹션 콘텐츠...
+      <footer>
+        섹션을 마무리하는 정보,,,
+        작성자 : 띠닝
+      </footer>
+    </section>
+    <article>
+    </article>
+  </main>
+  <aside>부가정보</aside>
+  <footer>바닥글</footer>
+  <hr />
+  <!-- WAI-ARIA : banner = body section의 header라는 뜻 -->
+  <div role="banner">헤더</div>
+  <div role="navigation">내비게이션</div>
+  
+  <div role="main">
+    <div role="article">섹션 콘텐츠</div>
+    <div role="group">섹션 콘텐츠</div>
+  </div>
+  <!-- WAI-ARIA : complementary = body section의 aside라는 뜻 -->
+  <div role="complementary">부가 정보</div>
+  <!-- WAI-ARIA : contentinfo = body section의 footer라는 뜻 -->
+  <div role="contentinfo">바닥글</div>
+</body>
+</html>

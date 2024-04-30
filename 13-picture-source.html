@@ -1,1 +1,44 @@
-<!-- HTML 코드를 작성해 주세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Picture, source 요소</title>
+</head>
+
+<body>
+  <picture>
+    <source />
+    <!-- <source srcset="" media="" type="image/" /> -->
+
+    <!-- 고배율 디스플레이의 경우 2배율 이미지를, 그렇지 않을 경우 1배율 이미지를 보여줌 -->
+    <!-- <source srcset="./images/netflix.png 1x, ./images/netflix@2x.png 2x" /> -->
+
+    <!-- source 태그는 생략 가능, srcset은 이미지 태그에 사용 가능 -->
+    <!-- <img src="./images/netflix.png" srcset="./images/netflix.png 1x, ./images/netflix@2x.png 2x" alt="넷플릭스" /> -->
+  </picture>
+  <hr />
+  <picture>
+    <!-- <img src="./images/netflix@2x.png" alt="넷플릭스" /> -->
+    <source srcset="./images/netflix@1x.webp 1x, ./images/netflix@2x.webp 2x" />
+    <img src="./images/netflix.png" alt="넷플릭스" />
+  </picture>
+  <hr />
+  <picture>
+    <source
+      srcset="./images/image-1x.png 1x, ./images/image-2x.png 2x, ./images/image-3x.png 3x, ./images/image-4x.png 4x" />
+    <img src="./images/image-src.png" srcset="" sizes="" alt="" />
+  </picture>
+  <hr />
+  <picture>
+    <!-- 원본 이미지의 가로 사이즈를 알려준다. (550w, 1024w, 1600w : viewport width를 의미한다.) -->
+    <!-- , 단위로 렌더링 경우의 수 지정 -->
+    <source srcset="./images/small-550.jpg 550w, ./images/medium-1024.jpg 1024w, ./images/large-1600.jpg 1600w"
+      sizes="(max-width: 800px) 50vw, 600px" />
+    <img src="./images/image-src.png" alt="" />
+  </picture>
+  <hr />
+</body>
+
+</html>

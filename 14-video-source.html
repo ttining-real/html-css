@@ -1,1 +1,28 @@
-<!-- HTML 코드를 작성해 주세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>비디오 관련 요소</title>
+</head>
+
+<body>
+  <!-- * poster 아직 재생되지 않는 상태에서 커버 이미지 설정 -->
+  <!-- <video class="fullsize" poster="video/poster.jpg" src="????"> -->
+  
+  <!-- * controls 재생되게 설정, autoplay 자동 재생, muted 음소거 -->
+  <!-- * 자동 재생을 켤 때 반드시 음소거 옵션을 같이 걸어줘야함. -->
+  <video class="fullsize" poster="video/poster.jpg" controls autoplay muted>
+    <!-- 비디오 포맷의 후보 -->
+    <source src="video/google-developer-stories.mp4" type="video/mp4" />
+    <source src="video/google-developer-stories.mov" type="video/mov" />
+    <source src="video/google-developer-stories.ogg" type="video/ogg" />
+    <source src="video/google-developer-stories.webm" type="video/webm" />
+
+    <!-- track : 자막 포맷(웹에서는 주로 vtt 포맷을 사용함) srclang 자막의 언어, label 자막이 여러 개일 때 레이블 사용 -->
+    <track src="video/google-developer-stories-subtitles-en.vtt" kind="captions" srclang="en" label="English Caption" />
+  </video>
+</body>
+
+</html>

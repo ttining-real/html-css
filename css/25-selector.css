@@ -1,1 +1,24 @@
 /* CSS 선택자(Selector) */
+
+/* 유니버셜 선택자: 전체 선택 */
+* {
+  color: red;
+}
+
+p {
+  color: blue;
+}
+
+
+.note {
+  color: green;
+}
+
+#euid {
+  color: purple;
+}
+
+/* [] : 어트리뷰트 셀렉터, a태그가 [href] 속성을 가졌을 경우 선택 */
+a[href] {
+  color: orange;
+}

@@ -1,1 +1,90 @@
-<!-- HTML 코드를 작성해 주세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>테이블 관련 요소</title>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th scope="row">제목행-제목셀</th>
+        <td>제목행-내용셀</td>
+      </tr>
+    </thead>
+    <!-- 테이블 행이 길 때, tfoot 구성을 해주면 좋음! -->
+    <tfoot>
+      <tr>
+        <!-- th태그는 스코프 속성을 사용할 수 있음. scope : 제목의 범위 -->
+        <th scope="row">테이블의 바닥글</th>
+        <td>테이블의 바닥글</td>
+      </tr>
+    </tfoot>
+    <!-- tbody는 한 번만 사용해도 되고, 여러 번 사용해도 됨. -->
+    <tbody>
+      <tr>
+        <th scope="row">제목셀</th>
+        <td>내용셀</td>
+      </tr>
+      <tr>
+        <th scope="row">제목셀</th>
+        <td>내용셀</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <!-- id, headers를 사용한 경우 -->
+  <table>
+    <caption>
+      중간고사 성적
+    </caption>
+    <tr>
+      <th>&nbsp;</th>
+      <th id="ko">국어</th>
+      <th id="en">영어</th>
+      <th id="math">수학</th>
+    </tr>
+    <tr>
+      <th id="sutudent1">홍길동</th>
+      <td headers="sutudent1 ko">80</td>
+      <td headers="sutudent1 en">70</td>
+      <td headers="sutudent1 math">90</td>
+    </tr>
+    <tr>
+      <th id="sutudent1">김철수</th>
+      <td headers="sutudent2 ko">80</td>
+      <td headers="sutudent2 en">70</td>
+      <td headers="sutudent2 math">90</td>
+    </tr>
+  </table>
+  <hr />
+  <!-- <div> 요소로 구현한 테이블에 WAI-ARIA를 사용한 경우 -->
+    <div role="table" aria-label="중간고사 성적">
+      <div role="rowgroup">
+        <div role="row">
+          <span role="columnheader" aria-sort="none">&nbsp;</span>
+          <span role="columnheader" aria-sort="none">국어</span>
+          <span role="columnheader" aria-sort="none">영어</span>
+          <span role="columnheader" aria-sort="none">수학</span>
+        </div>
+      </div>
+      <div role="rowgroup">
+        <div role="row" aria-rowindex="1">
+          <span role="rowheader">홍길동</span>
+          <span role="cell">80</span>
+          <span role="cell">70</span>
+          <span role="cell">90</span>
+        </div>
+      </div>
+      <div role="rowgroup">
+        <div role="row" aria-rowindex="2">
+          <span role="rowheader">김철수</span>
+          <span role="cell">90</span>
+          <span role="cell">100</span>
+          <span role="cell">50</span>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

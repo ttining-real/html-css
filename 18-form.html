@@ -1,1 +1,89 @@
-<!-- HTML 코드를 작성해 주세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>폼 관련 요소</title>
+</head>
+
+<body>
+  <!-- 검색어 입력 서식 예시 -->
+  <!-- action : 데이터를 받아서 처리할 서버 URL (전송 버튼을 누르는 순간 해당 URL로 전송해줌) -->
+  <!-- method : 방법론, GET 방식과 POST 방식이 있음 -->
+  <form action="https://formspree.io/seulbinim@gmail.com" method="POST" class="search-form" id="search-form">
+    <!-- fieldset : xhtml 필수 요소, div 태그와 의미가 비슷함. 묶어주는 요소, 의미가 같은/연관성이 있는 요소들을 묶어줌. -->
+    <fieldset>
+      <!-- legend : fieldset으로 묶어놓은 것들을 어떤 건지 알려줌 (fieldset과 legend는 세트) -->
+      <legend>검색</legend>
+      <div class="searchform-wrapper">
+        <!-- 재사용 가능성이 높은 컴포넌트(부품)를 div 태그를 사용하여 하나로 묶어줌 -->
+        <div class="form-input-wrapper">
+          <!-- ! 모든 폼 서식은 반드시 1:1로 대응되는 label을 가져야 함. -->
+          <!-- 명시적 레이블링 -->
+          <label for="search" class="a11yHidden form-input-label">검색어</label>
+          <!-- required 속성 : 필수 서식이라는 뜻 -->
+          <!-- placeholder : 입력 값에 대한 힌트 (레이블 대신 사용하는 것은 권장하지 X) -->
+          <input type="search" id="search" required placeholder="검색어를 입력하세요." name="search" class="form-input" />
+          <!-- <input type="email" id="search" required placeholder="이메일을 입력하세요." name="search" class="form-input" /> -->
+        </div>
+        <!-- type="submit" : 밸리데이션 처리 -->
+        <!-- type="submit" : 전송하는 역할 -->
+        <!-- type="button" :  -->
+        <!-- button 태그는 form 태그 안에 같이 있어야 함. -->
+        <button type="submit" class="searchform-button">검색</button>
+      </div>
+    </fieldset>
+  </form>
+  <!-- 버튼 태그가 form 태그 밖에 있을 때, form의 id값과 button의 form 속성으로 연결해주는 방법이 있다. -->
+  <button type="submit" class="searchform-button" form="search-form">검색</button>
+  <br />
+  <br />
+  <hr />
+  <br />
+  <!-- 체크 박스 예시 -->
+  <div class="form-checkbox-wrapper">
+    <!-- label이 input 앞/뒤에 있어도 상관 없음. -->
+    <!-- 다만, id와 for 속성으로 연결해주어야 함. -->
+    <input class="form-checkbox" type="checkbox" id="secretWritings" name="secretWritings" />
+    <label for="secretWritings" class="form-checkbox-label">
+      비밀글로 등록하기
+    </label>
+  </div>
+  <br />
+  <hr />
+  <br />
+  <!-- 라디오 버튼 예시 -->
+  <!-- 목록 중 체크한 것 하나만 체크가 됨. => name 속성 값이 같기 때문. -->
+  <p id="euid-course">이듬 교육을 다시 수강할 의향이 있으신가요?</p>
+  <div aria-labelledby="euid-course" role="group">
+    <div class="form-radio-wrapper">
+      <input type="radio" id="euid-course-yes" value="Y" name="euidCourse" class="form-radio" />
+      <label for="euid-course-yes" class="form-radio-label">예</label>
+    </div>
+    <div class="form-radio-wrapper">
+      <input type="radio" id="euid-course-no" value="N" name="euidCourse" class="form-radio" />
+      <label for="euid-course-no" class="form-radio-label">아니오</label>
+    </div>
+  </div>
+  <br />
+  <hr />
+  <br />
+  <!-- 셀렉트 박스 예시 -->
+  <!-- label 태그를 쓰지 않았기 때문에 aria-label 속성을 써줌. -->
+  <select aria-label="언어 선택" name="selectLanguage" class="select-language__select">
+    <option value="korean">한국어</option>
+    <option value="english">영어</option>
+  </select>
+  <br />
+  <hr />
+  <br />
+  <!-- 텍스트 에어리어 예시 -->
+  <div class="form-textarea-wrapper">
+    <label for="message" class="form-textarea-label">Message</label>
+    <textarea id="message" name="message" cols="20" rows="10" placeholder="Put your extra message"
+      class="form-textarea"></textarea>
+  </div>
+</body>
+
+</html>

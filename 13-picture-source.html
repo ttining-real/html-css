@@ -34,6 +34,12 @@
   <picture>
     <!-- 원본 이미지의 가로 사이즈를 알려준다. (550w, 1024w, 1600w : viewport width를 의미한다.) -->
     <!-- , 단위로 렌더링 경우의 수 지정 -->
+    <!-- firefox 에서 제대로 보이니까 여기서 테스트 해보기. -->
+    <!-- 
+      sizes="(max-width: 800px) 50vw, 600px"
+      (max-width: 800px) 50vw : 800까지는 50vw로 보이게,
+      뷰포트 범위를 벗어나면 600px로 고정해줘 라는 뜻 ㅎ
+    -->
     <source srcset="./images/small-550.jpg 550w, ./images/medium-1024.jpg 1024w, ./images/large-1600.jpg 1600w"
       sizes="(max-width: 800px) 50vw, 600px" />
     <img src="./images/image-src.png" alt="" />
